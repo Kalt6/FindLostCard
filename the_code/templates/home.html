@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FindCard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"/>
+
+    <style>
+        html {
+        scrollbar-width: normal;
+        scrollbar-color:  #777  #555;
+      }
+
+      html ::-webkit-scrollbar {
+        width: 4vw;
+      }
+      html ::-webkit-scrollbar-thumb {
+        background-color: #7775;
+      }
+
+      html ::-webkit-scrollbar-thumb:hover {
+        background-color: #777;
+      }
+
+      html ::-webkit-scrollbar-track {
+        background-color: #5555;
+      }
+
+      html ::-webkit-scrollbar-track:hover {
+        background-color: #555;
+      }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <div>
+        <h1 class="marque" style="color: white">
+            <span>UPLOAD LOST CARD HERE</span>
+        </h1>
+    </div>
+</nav>
+
+<hr size="2" width="100%" color="green"/>
+
+<input type="checkbox" class="menbar" name="" id="check"/>
+<div class="container">
+    <label for="check">
+        <span class="fas fa-times" id="times"></span>
+        <span class="fas fa-bars" id="bars"></span>
+    </label>
+    <div class="head">Menu</div>
+    <ol>
+        <li>
+            <a href="#"><i class="fas fa-home">Home</i></a>
+        </li>
+        <li>
+            <a href="#"><i class="fas fa-phone">Contact</i></a>
+        </li>
+        <li>
+            <form action="{{url_for('search')}}" method="get">
+                <input type="text"
+                       autocomplete="off"
+                       class="search-box"
+                       placeholder="Search By ID"
+                       name="q"/>
+            </form>
+        </li>
+    </ol>
+</div>
+
+
+<form class="box" action="/" method="post" enctype="multipart/form-data">
+    <h1>Card Details</h1>
+    <input type="text" name="student_id" placeholder="ID Number" autocomplete="off" required>
+    <input type="text" name="username" placeholder="Username" autocomplete="off" required>
+    <input type="text" name="telephone" placeholder="Telephone" autocomplete="off" required>
+    <input type="file" name="photo" value="Photo">
+    <input type="submit" name="" value="submit">
+</form>
+
+</body>
+</html>

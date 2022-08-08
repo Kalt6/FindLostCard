@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Found Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"/>
+
+    <style>
+      html {
+        scrollbar-width: normal;
+        scrollbar-color:  #777  #555;
+      }
+
+      html ::-webkit-scrollbar {
+        width: 4vw;
+      }
+      html ::-webkit-scrollbar-thumb {
+        background-color: #7775;
+      }
+
+      html ::-webkit-scrollbar-thumb:hover {
+        background-color: #777;
+      }
+
+      html ::-webkit-scrollbar-track {
+        background-color: #5555;
+      }
+
+      html ::-webkit-scrollbar-track:hover {
+        background-color: #555;
+      }
+
+    </style>
+  </head>
+  <body>
+     <nav>
+        <div>
+          <h1 class="marque" style="color: white">
+            <span>FOUND YOUR CARD RIGHT</span>
+          </h1>
+        </div>
+      </nav>
+
+
+
+    <hr size="2" width="100%" color="green">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+      {% if category == 'error' %}
+      <div class="alert alert-danger alert-dismissable fade show" role="alert">
+        {{ message }}
+        <button class="close" type="button" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% else %}
+      <div class="alert alert-success alert-dismissable fade show" role="alert">
+        {{ message }}
+        <button class="close" type="button" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endif%} {% endfor %} {% endif %} {% endwith %}
+    <div class="flexbox-container">
+      <div class="flexbox-item flexbox-item-1">
+       <img src="data:;base64, {{ image }}" alt="Lost Card Image">
+      </div>
+      <div class="flexbox-item flexbox-item-2">
+        <div class="box-element">
+          <h2><strong>ID Number</strong>: <em>{{ detail_display.student_id }}</em></h2><br>
+          <h2><strong>Username</strong>: <em>{{ detail_display.username }}</em></h2><br>
+          <h2><a href="tel"></a><strong>Telephone</strong>: <em>{{ detail_display.telephone }}</em></h2>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
+

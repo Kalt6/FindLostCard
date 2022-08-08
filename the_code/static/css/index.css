@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+
+}
+
+
+body {
+    background-color: #34495e;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+/*------------------------------------------- Navbar --------------------------------- */
+
+nav{
+    display: flex;
+    align-items: center;
+    background: black;
+    padding: 40px;
+}
+
+
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 7px;
+	padding: 10px;
+    min-height: 280px;
+}
+
+
+/*------------------------------------------- Marque --------------------------------- */
+
+
+@keyframes move {
+    0% {
+        -webkit-transform: translate(-100%, 0);
+    }
+    100% {
+        -webkit-transform: translate(0, 0);
+    }
+}
+
+.marque {
+    width: 1500px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marque span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: move 6s infinite linear;
+}
+
+
+/*------------------  Card Display-----------------*/
+
+.flexbox-container {
+    display: flex;
+
+}
+
+
+.flexbox-item{
+    width: 200px;
+    margin: 20px;
+    border: 1px solid #333;
+    background-color: white;
+    justify-content: center;
+}
+.flexbox-item-1{
+    max-height: 300px;
+    width: 600px;
+    margin-left: 10%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.flexbox-item-2 {
+    max-height: 300px;
+    width: 300px;
+
+}
+
+h2 {
+    margin-top: 20px;
+}
+
